@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API CRUD Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>API CRUD Manager</h1>
+        <h2>User ID: <span id="user-id">P01LAH</span></h2>
+        
+        <div class="control-panel">
+            <button id="init-btn">Inicializar Datos</button>
+            <button id="clean-bad-btn">Limpiar Registros Bad</button>
+            <button id="delete-all-btn">Eliminar Todos</button>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card bad">
+                <h3>Bad</h3>
+                <span id="bad-count">0</span>
+            </div>
+            <div class="stat-card medium">
+                <h3>Medium</h3>
+                <span id="medium-count">0</span>
+            </div>
+            <div class="stat-card good">
+                <h3>Good</h3>
+                <span id="good-count">0</span>
+            </div>
+        </div>
+
+        <div class="results-container">
+            <h2>Registros</h2>
+            <div id="results-list" class="results-list"></div>
+        </div>
+
+        <div class="crud-form">
+            <h2>Editor de Registros</h2>
+            <form id="result-form">
+                <input type="hidden" id="result-id">
+                <div class="form-group">
+                    <label for="value">Valor (0-100):</label>
+                    <input type="number" id="value" min="0" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Categoría:</label>
+                    <select id="category" required>
+                        <option value="bad">Bad (0-60)</option>
+                        <option value="medium">Medium (61-85)</option>
+                        <option value="good">Good (86-100)</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" id="save-btn">Guardar</button>
+                    <button type="button" id="cancel-btn">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
